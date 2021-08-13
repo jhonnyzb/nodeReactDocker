@@ -14,11 +14,11 @@ services:
     front:
           container_name: frontweb
           restart: always
-          build: ./frontend/crud-sockets
+          build: ./frontend/crud
           ports:  
               - 3000:3000
           volumes: 
-              - ./frontend/crud-sockets:/usr/src/app
+              - ./frontend/crud:/usr/src/app
           environment: 
               - REACT_APP_URL_BACK
           links: 

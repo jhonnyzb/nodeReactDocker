@@ -1,29 +1,2 @@
 /backend/node_modules
-
-
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/frontend/crud-sockets/node_modules
-/frontend/crud-sockets/.pnp
-/frontend/crud-sockets/.pnp.js
-
-# testing
-/frontend/crud-sockets/coverage
-
-# production
-/frontend/crud-sockets/build
-
-# misc
-/frontend/crud-sockets/.DS_Store
-/frontend/crud-sockets/.env.local
-/frontend/crud-sockets/.env.development.local
-/frontend/crud-sockets/.env.test.local
-/frontend/crud-sockets/.env.production.local
-
-/frontend/crud-sockets/npm-debug.log*
-/frontend/crud-sockets/yarn-debug.log*
-/frontend/crud-sockets/yarn-error.log*
-
-
 .env
