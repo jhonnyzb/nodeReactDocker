@@ -5,21 +5,32 @@ services:
           container_name: backweb
           restart: always
           build: ./backend
-          ports: 
-              - ${PORT}:${PORT}
           volumes: 
-              - ./backend:/usr/src/app
+              - ./backend:/app
+              - node_modules:/app/node_modules
           environment: 
               - PORT
+          ports: 
+              - ${PORT}:${PORT}
+
     front:
           container_name: frontweb
           restart: always
-          build: ./frontend/crud
+          build: ./crud
           ports:  
               - 3000:3000
           volumes: 
-              - ./frontend/crud:/usr/src/app
+              - ./crud:/app
+              - node_modulesr:/app/node_modules
           environment: 
               - REACT_APP_URL_BACK
           links: 
               - back
+
+volumes: 
+    node_modules:
+    node_modulesr:
+
+         
+          
+    
