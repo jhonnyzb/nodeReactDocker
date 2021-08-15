@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import io from 'socket.io-client';
+import List from './components/List';
+
 
 const socket = io(process.env.REACT_APP_URL_BACK, { transports: ['websocket', 'polling', 'flashsocket'] })
 
@@ -19,7 +21,13 @@ const App = () => {
       ua.push(resp.data)
       setarray([...ua]);
     })
+    // eslint-disable-next-line
   }, [])
+
+
+  useEffect(() => {
+    console.log('app render')
+  })
 
 
   const sendData = () => {
@@ -38,11 +46,7 @@ const App = () => {
   return (
     <div>
       <button onClick={sendData}  >Enviar</button>
-      {array.map((item, index) => {
-        return (
-          <h1 key={index} >{item.name}</h1>
-        )
-      })}
+      <List users={array}/>
     </div>
   )
 }
